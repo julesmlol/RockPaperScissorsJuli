@@ -1,3 +1,11 @@
+def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
+def prGreen(skk): print("\033[92m {}\033[00m" .format(skk))
+def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
+def prLightPurple(skk): print("\033[94m {}\033[00m" .format(skk))
+def prPurple(skk): print("\033[95m {}\033[00m" .format(skk))
+def prCyan(skk): print("\033[96m {}\033[00m" .format(skk))
+def prLightGray(skk): print("\033[97m {}\033[00m" .format(skk))
+def prBlack(skk): print("\033[98m {}\033[00m" .format(skk))
 import random
 rock = 'Rock'
 paper = 'Paper'
@@ -20,19 +28,19 @@ computer_random_number = random.randint(1, 3)
 
 if computer_random_number == 2:
     computer_move = rock
-    print("The computer chose rock")
+    prRed("The computer chose rock")
 elif computer_random_number == 3: 
     computer_move = paper
-    print("The computer chose paper")
+    prYellow("The computer chose paper")
 else: 
     computer_move = scissors
-    print("The computer chose scissors")
+    prCyan("The computer chose scissors")
 if (player_move == rock and computer_move == scissors) or \
         (player_move == paper and computer_move == rock) or \
         (player_move == scissors and computer_move == paper):
-    print("You win!")
+    prPurple("You win!")
 
 elif player_move == computer_move:
-    print("Draw!")
+    prGreen("Draw!")
 else:
-    print("You lose!")
+    prRed("You lose!")
