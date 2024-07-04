@@ -12,7 +12,9 @@ paper = 'Paper'
 scissors = 'Scissors'
 yes = 'yes'
 no = 'no'
-while true:
+player_score = 0
+computer_score = 0
+while True:
     player_move = input("Choose [r]ock, [p]aper or [s]cissors: ")
     if player_move == "r":
         player_move = rock
@@ -21,7 +23,7 @@ while true:
     elif player_move == "s":
         player_move = scissors
     else: 
-    raise SystemExit("Invalid Input. Try again...")
+        print("Invalid Input. Try again...")
         continue
     computer_move = ""
     computer_random_number = random.randint(1, 3)
@@ -39,8 +41,18 @@ while true:
             (player_move == paper and computer_move == rock) or \
             (player_move == scissors and computer_move == paper):
         prPurple("You win!")
+        player_score += 1
 
     elif player_move == computer_move:
         prGreen("Draw!")
     else:
         prRed("You lose!")
+        computer_score += 1
+    player_choose = input("Choose [yes] to continue or [no] to quit: ")
+    if player_choose == "no":
+        prRed("Thank you for playing!")
+        print(f"Your score: {player_score}")
+        print(f"Computer's score: {computer_score}")
+        break
+         
+
